@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from "./components/Navbar";
+import Titlebar from "./components/TitleBar";
 import Header from "./components/Header";
 import Wrapper from "./components/Wrapper";
 import images from "./assets/images.json";
@@ -8,18 +8,28 @@ import Footer from "./components/Footer";
 
 class App extends Component {
   state =  {
-    images
+    images,
+    score: 0,
+    totalScore: 0
   };
 
   handleClicks = event => {
-    console.log(event.currentTarget.getAttribute("value"))
-    // event.target.id === false ? 
-}
+    let currentImages = this.state.images
+    // if clicked === "false" => run handleIncrement, clicked === "true", shuffle imgs
+    // else => set score === 0, clicked === "false", shuffle imgs
+  }
+
+  handleIncrement = event => {
+    this.setState({ score: this.state.score + 1, totalScore: this.state.totalScore + 1})
+  }
 
   render() {
     return (
       <div>
-        <Navbar />
+        <Titlebar 
+          score= {this.state.score}
+          totalScore= {this.state.totalScore}
+        />
         <Header />
         <Wrapper>
           {this.state.images.map(image => (
@@ -30,6 +40,7 @@ class App extends Component {
               source= {image.source}
               clicked= {image.clicked}
               handleClicks= {this.handleClicks}
+              handleIncrement= {this.handleIncrement}
             />
             ))}
         </Wrapper>
