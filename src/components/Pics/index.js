@@ -4,9 +4,10 @@ import "./styles.css";
 function Pics(props) {
     return (
         <div className="clickable-image">
-            <img alt={props.name} src={props.source} data-clicked="false"></img>
+            <img alt={props.name} src={props.source} onClick={props.handleClicks} id={props.id} value={props.clicked} ></img>
         </div>
     )
+    
 }
 
 export default Pics;

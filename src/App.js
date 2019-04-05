@@ -11,9 +11,11 @@ class App extends Component {
     images
   };
 
-  // handleClicks= event => {
+  handleClicks = event => {
+    console.log(event.currentTarget.getAttribute("value"))
+    // event.target.id === false ? 
+}
 
-  // }
   render() {
     return (
       <div>
@@ -26,6 +28,8 @@ class App extends Component {
               key= {image.id}
               name= {image.name}
               source= {image.source}
+              clicked= {image.clicked}
+              handleClicks= {this.handleClicks}
             />
             ))}
         </Wrapper>
