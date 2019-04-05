@@ -1,0 +1,11 @@
+.clickable-image {
+    width: 250px;
+    height: 250px;
+    float: left;
+    margin: 8px 25px;
+}
+
+.clickable-image img {
+    width: 100%;
+    height: auto;
+}
