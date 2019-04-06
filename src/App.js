@@ -14,6 +14,12 @@ class App extends Component {
     totalScore: 0
   };
   // create a function that shuffles the images
+  // shuffleImages = () => {
+    // take all of the images and put them into a new array
+    // use a .Math function to randomly sort the images by id
+    // push the new sorted array to the render Wrapper
+    // }
+  
   handleClicks = event => {
     const newState = { ...this.state }
     let clickedIndex = newState.images.findIndex(image => image.id === parseInt(event.target.id));
