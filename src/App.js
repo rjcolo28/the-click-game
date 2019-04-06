@@ -6,6 +6,7 @@ import images from "./assets/images.json";
 import Pics from "./components/Pics";
 import Footer from "./components/Footer";
 
+
 class App extends Component {
   state =  {
     images,
@@ -13,14 +14,22 @@ class App extends Component {
     totalScore: 0
   };
 
-  handleClicks = event => {
-    let currentImages = this.state.images
-    // if clicked === "false" => run handleIncrement, clicked === "true", shuffle imgs
-    // else => set score === 0, clicked === "false", shuffle imgs
-  }
-
   handleIncrement = event => {
     this.setState({ score: this.state.score + 1, totalScore: this.state.totalScore + 1})
+  };
+
+  handleClicks = event => {
+    let currentImages = this.state.images
+    let currentScore = this.state.score
+    
+    // if clicked === "false" => run handleIncrement, clicked === "true", shuffle imgs
+    // else => set score === 0, clicked === "false", shuffle imgs
+    if(currentImages.clicked === "false") {
+      this.handleIncrement();
+      this.setState(currentImages.clicked === "true");
+    } else {
+      return(currentScore === 0)
+    }
   }
 
   render() {
