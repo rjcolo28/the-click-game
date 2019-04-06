@@ -13,22 +13,23 @@ class App extends Component {
     score: 0,
     totalScore: 0
   };
-
-  handleIncrement = event => {
-    this.setState({ score: this.state.score + 1, totalScore: this.state.totalScore + 1})
-  };
-
+  // create a function that shuffles the images
   handleClicks = event => {
-    let currentImages = this.state.images
-    let currentScore = this.state.score
-    
+    const newState = { ...this.state }
+    let clickedIndex = newState.images.findIndex(image => image.id === parseInt(event.target.id));
+    console.log(clickedIndex);
+    let clickedImage = event.target.getAttribute("clicked");
+    console.log(clickedImage)
     // if clicked === "false" => run handleIncrement, clicked === "true", shuffle imgs
-    // else => set score === 0, clicked === "false", shuffle imgs
-    if(currentImages.clicked === "false") {
-      this.handleIncrement();
-      this.setState(currentImages.clicked === "true");
+    if(clickedImage === "false") {
+      this.setState({
+        score: this.state.score + 1,
+        totalScore: this.state.totalScore + 1
+      })
+      clickedImage = "true"
+      // else => set score === 0, clicked === "false", shuffle imgs
     } else {
-      return(currentScore === 0)
+      this.setState({ score: 0 })
     }
   }
 
@@ -49,7 +50,6 @@ class App extends Component {
               source= {image.source}
               clicked= {image.clicked}
               handleClicks= {this.handleClicks}
-              handleIncrement= {this.handleIncrement}
             />
             ))}
         </Wrapper>
