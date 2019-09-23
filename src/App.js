@@ -24,18 +24,20 @@ class App extends Component {
     const newState = { ...this.state }
     let clickedIndex = newState.images.findIndex(image => image.id === parseInt(event.target.id));
     console.log(clickedIndex);
-    let clickedImage = event.target.getAttribute("clicked");
-    console.log(clickedImage)
-    // if clicked === "false" => run handleIncrement, clicked === "true", shuffle imgs
-    if(clickedImage === "false") {
+    let clickedImage = event.target;
+    let clickState = clickedImage.getAttribute("clicked");
+    console.log(clickState);
+    // if clicked === "false" => run handleIncrement, changed clicked === "true", shuffle imgs
+    if(clickState === "false") {
       this.setState({
         score: this.state.score + 1,
         totalScore: this.state.totalScore + 1
       })
-      clickedImage = "true"
-      // else => set score === 0, clicked === "false", shuffle imgs
+      clickedImage.setAttribute("clicked", "true");
+      // else => set score === 0, change clicked === "false", reshuffle imgs
     } else {
       this.setState({ score: 0 })
+      clickedImage.setAttribute("clicked", "false");
     }
   }
 
