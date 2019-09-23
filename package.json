@@ -4,8 +4,8 @@
   "private": true,
   "homepage": "https://rjcolo28.github.io/the-clicky-game/",
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-scripts": "2.1.8"
   },
   "scripts": {
@@ -26,6 +26,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.1.1"
   }
 }

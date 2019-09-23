@@ -18,6 +18,8 @@ class App extends Component {
   handleClicks = event => {
     // assign the array of image objects to a variable
     let imageArray = this.state.images;
+
+    console.log(imageArray);
     
     // assign the click's target to a variable
     let clickedImage = event.target;
