@@ -19,11 +19,14 @@ class App extends Component {
     // use a .Math function to randomly sort the images by id
     // push the new sorted array to the render Wrapper
     // }
+    
   
   handleClicks = event => {
-    const newState = { ...this.state }
+    const newState = { ...this.state };
     let clickedIndex = newState.images.findIndex(image => image.id === parseInt(event.target.id));
     console.log(clickedIndex);
+    let imageArray = this.state.images;
+    console.log(imageArray);
     let clickedImage = event.target;
     let clickState = clickedImage.getAttribute("clicked");
     console.log(clickState);
@@ -34,10 +37,12 @@ class App extends Component {
         totalScore: this.state.totalScore + 1
       })
       clickedImage.setAttribute("clicked", "true");
+      imageArray.sort( () => Math.random() - 0.5 );
       // else => set score === 0, change clicked === "false", reshuffle imgs
     } else {
       this.setState({ score: 0 })
       clickedImage.setAttribute("clicked", "false");
+      imageArray.sort( () => Math.random() - 0.5 );
     }
   }
 
