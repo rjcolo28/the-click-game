@@ -5,9 +5,8 @@ class Footer extends React.Component {
     render() {
         return (
             <footer className="footer">
-                <div className="container">
-                    <span>Test</span>
-                </div>
+                    <p>Title font provided by Font Meme at https://fontmeme.com/super-smash-bros-font/</p>
+                    <p>All images provided by Nintendo Life</p>
             </footer>
         )
     }

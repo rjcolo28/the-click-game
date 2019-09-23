@@ -6,8 +6,8 @@ class Header extends React.Component {
         return (
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-4">Click Bros. Ultimate!</h1>
-                    <p className="lead">Click on an image to begin!</p>
+                <a href="https://fontmeme.com/super-smash-bros-font/"><img src="https://fontmeme.com/permalink/190923/041beb59c52d75b13d9daf33a2b89d58.png" alt="super-smash-bros-font" border="0"></img></a>
+                <h2>Click on an image to begin!</h2>
                 </div>
             </div>
         )

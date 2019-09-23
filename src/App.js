@@ -13,35 +13,40 @@ class App extends Component {
     score: 0,
     totalScore: 0
   };
-  // create a function that shuffles the images
-  // shuffleImages = () => {
-    // take all of the images and put them into a new array
-    // use a .Math function to randomly sort the images by id
-    // push the new sorted array to the render Wrapper
-    // }
-    
   
+  // game mechanics
   handleClicks = event => {
-    const newState = { ...this.state };
-    let clickedIndex = newState.images.findIndex(image => image.id === parseInt(event.target.id));
-    console.log(clickedIndex);
+    // assign the array of image objects to a variable
     let imageArray = this.state.images;
-    console.log(imageArray);
+    
+    // assign the click's target to a variable
     let clickedImage = event.target;
+
+    // set the "clicked" attribute of the clicked pic to a variable and log it in console of testing
     let clickState = clickedImage.getAttribute("clicked");
     console.log(clickState);
-    // if clicked === "false" => run handleIncrement, changed clicked === "true", shuffle imgs
+
+    // attribute check
     if(clickState === "false") {
+      // add one point to both game score and total score
       this.setState({
         score: this.state.score + 1,
         totalScore: this.state.totalScore + 1
       })
+
+      // set attribute of clicked image to "true"
       clickedImage.setAttribute("clicked", "true");
+
+      // randomize order of images
       imageArray.sort( () => Math.random() - 0.5 );
-      // else => set score === 0, change clicked === "false", reshuffle imgs
+
+      // if "clicked" attribute is true
     } else {
+      // reset game score to 0
       this.setState({ score: 0 })
+      // reset "clicked" attribute to true
       clickedImage.setAttribute("clicked", "false");
+      // randomize images again
       imageArray.sort( () => Math.random() - 0.5 );
     }
   }
