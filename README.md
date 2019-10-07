@@ -1,3 +1,3 @@
 # Super Click Bros.
 
-## Introduction
+## Overview
