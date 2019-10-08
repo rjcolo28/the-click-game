@@ -10,5 +10,6 @@ Super Click Bros. is a simple clicking game with a Super Smash Bros theme. The p
 - CSS
 - Bootstrap
 
-## How it Works
+## Demonstration
+
 
