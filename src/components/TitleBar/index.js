@@ -7,7 +7,7 @@ function Titlebar(props) {
             <a className="navbar-brand" href="/">The Clicky Game</a>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
-                    <li className="nav-item">
+                    <li>
                         <span>Welcome, Challenger!</span>
                     </li>
                     <li className="nav-item">
