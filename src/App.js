@@ -8,19 +8,19 @@ import Footer from "./components/Footer";
 
 
 class App extends Component {
-  state =  {
+  state = {
     images,
     score: 0,
     totalScore: 0
   };
-  
+
   // game mechanics
   handleClicks = event => {
     // assign the array of image objects to a variable
     let imageArray = this.state.images;
 
     console.log(imageArray);
-    
+
     // assign the click's target to a variable
     let clickedImage = event.target;
 
@@ -29,7 +29,7 @@ class App extends Component {
     console.log(clickState);
 
     // attribute check
-    if(clickState === "false") {
+    if (clickState === "false") {
       // add one point to both game score and total score
       this.setState({
         score: this.state.score + 1,
@@ -40,38 +40,38 @@ class App extends Component {
       clickedImage.setAttribute("clicked", "true");
 
       // randomize order of images
-      imageArray.sort( () => Math.random() - 0.5 );
+      imageArray.sort(() => Math.random() - 0.5);
 
       // if "clicked" attribute is true
     } else {
       // reset game score to 0
       this.setState({ score: 0 })
-      // reset "clicked" attribute to true
+      // reset "clicked" attribute to true. This only resets the image that was clicked but does not reset all images that have the clicked attribute in the current session
       clickedImage.setAttribute("clicked", "false");
       // randomize images again
-      imageArray.sort( () => Math.random() - 0.5 );
+      imageArray.sort(() => Math.random() - 0.5);
     }
   }
 
   render() {
     return (
       <div>
-        <Titlebar 
-          score= {this.state.score}
-          totalScore= {this.state.totalScore}
+        <Titlebar
+          score={this.state.score}
+          totalScore={this.state.totalScore}
         />
         <Header />
         <Wrapper>
           {this.state.images.map(image => (
             <Pics
-              id= {image.id}
-              key= {image.id}
-              name= {image.name}
-              source= {image.source}
-              clicked= {image.clicked}
-              handleClicks= {this.handleClicks}
+              id={image.id}
+              key={image.id}
+              name={image.name}
+              source={image.source}
+              clicked={image.clicked}
+              handleClicks={this.handleClicks}
             />
-            ))}
+          ))}
         </Wrapper>
         <Footer />
       </div>
