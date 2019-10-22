@@ -1,7 +1,7 @@
-# Super Click Bros.
+# Click Bros. Ultimate
 
 ## Overview
-Super Click Bros. is a simple clicking game with a Super Smash Bros theme. The player's goal is to click every image once. The images are stored in a .json file that is accessed as React components.
+Click Bros. Ultimate is a simple clicking game with a Super Smash Bros theme. The player's goal is to click every image once. The images are stored in a .json file that is accessed as React components.
 
 ![alt text](READMEpics/intro.png)
 
